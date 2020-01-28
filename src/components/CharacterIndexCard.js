@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link, } from 'react-router-dom';
 import { Card, } from 'semantic-ui-react';
 
 const CharacterIndexCard = (props) => {
-  const { name, } = props.character
+  const { name, url, } = props.character
 
   return (
-    <Card>
-      <Card.Content>
+    <Card as={Link} to={{pathname: "/character", url: url}} color="yellow">
+      <Card.Content >
         <Card.Header>{name}</Card.Header>
       </Card.Content>
     </Card>
