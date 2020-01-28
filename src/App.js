@@ -1,7 +1,13 @@
 import React from 'react';
+import { Route, Switch, } from 'react-router-dom';
+import Home from './components/Home';
+import PageNotFound from './components/PageNotFound';
 
 const App = () => (
-  <h1>Home</h1>
+  <Switch>
+      <Route exact path="/" component={Home} />
+      <Route component={PageNotFound} />
+  </Switch>
 );
 
 export default App;
