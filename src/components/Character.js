@@ -1,6 +1,7 @@
 import React, { useEffect, useState, } from 'react';
 import axios from 'axios';
-import { Card, } from 'semantic-ui-react';
+import CharacterCard from './CharacterCard';
+import { Header, } from 'semantic-ui-react';
 
 const Character = (props) => {
   const url = props.location.url;
@@ -20,13 +21,14 @@ const Character = (props) => {
 
 
   return (
-    <Card>
-      <Card.Content>
-      <Card.Header>{characterInfo.name}</Card.Header>
-      <Card.Description>Birth Year: {characterInfo.birth_year}</Card.Description>
-      <Card.Description>Homeworld: {homeworld}</Card.Description>
-      </Card.Content>
-    </Card>
+    <>
+      {
+        homeworld === "" ?
+        <Header>Loading</Header>
+        :
+        <CharacterCard characterInfo={characterInfo} homeworld={homeworld} />
+      }
+    </>
   );
 };
 
