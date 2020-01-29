@@ -4,7 +4,7 @@ import { Card, } from 'semantic-ui-react';
 
 const Character = (props) => {
   const url = props.location.url;
-  const [characterInfo, setCharacterInfo] = useState({name: ""});
+  const [characterInfo, setCharacterInfo] = useState({name: "", birth_year: ""});
   const [homeworld, setHomeworld] = useState("");
 
   useEffect( () => {
